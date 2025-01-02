@@ -1,4 +1,4 @@
-import SideBar from '@/Components/SideBar';
+import SideBar from '@/Components/sidebar/SideBarr';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
