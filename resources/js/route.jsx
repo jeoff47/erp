@@ -1,0 +1,165 @@
+import Adjustments from "./Pages/adjustments/Adjustments";
+import Currencies from "./Pages/currencies/Currencies";
+import Dashboard from "./Pages/Dashboard";
+import Expenses from "./Pages/expenses/Expenses";
+import ExpensesCatogories from "./Pages/expenses/ExpensesCatogories";
+import Customers from "./Pages/people/Customers";
+import Suppliers from "./Pages/people/Suppliers";
+import User from "./Pages/people/User";
+import BaseUnit from "./Pages/products/BaseUnit";
+import Brands from "./Pages/products/Brands";
+import PrintBarCode from "./Pages/products/PrintBarCode";
+import ProductCategories from "./Pages/products/ProductCategories";
+import Products from "./Pages/products/Products";
+import Units from "./Pages/products/Units";
+import Qoutations from "./Pages/Qoutation/Qoutations";
+import Reports from "./Pages/reports/Reports";
+import RolesAndPermission from "./Pages/rolesAndPermission/RolesAndPermission";
+import Sales from "./Pages/sales/Sales";
+import SalesReturn from "./Pages/sales/SalesReturn";
+import Settings from "./Pages/settings/Settings";
+import WareHouse from "./Pages/warehouse/WareHouse";
+import Transfers from "./Pages/transfers/Transfers";
+import Purchases from "./Pages/purchases/purchases";
+import PurchasesReturn from "./Pages/purchases/PurchasesReturn";
+import { MdDashboard } from "react-icons/md";
+
+export const route = [
+  {
+    path: "Dashboard",
+    element: <Dashboard />,
+    permission: "",
+    icon: <MdDashboard />
+  },
+  {
+    path: "Products",
+    subMenu: [
+      {
+        path:"Products",
+        element: <Products />,
+        permission: ""
+      },
+      {
+        path: "Product Categories",
+        element: <ProductCategories />,
+        permission: ""
+      },
+      {
+        path: "Base Unit",
+        element: <BaseUnit />,
+        permission: ""
+      },
+      {
+        path: "Brands",
+        element: <Brands />,
+        permission: ""
+      },
+      {
+        path: "Print BarCode",
+        element: <PrintBarCode />,
+        permission: ""
+      },
+      {
+        path: "Units",
+        element: <Units />,
+        permission: ""
+      }
+    ]
+  },
+  {
+    path: "Qoutations",
+    element: <Qoutations />,
+    permission: ""
+  },
+  {
+    path: "Adjustments",
+    element: <Adjustments />,
+    permission: ""
+  },
+  {
+    path: "Currencies",
+    element: <Currencies />,
+    permission: ""
+  },
+  {
+    path: "Expenses",
+    element: <Expenses />,
+    permission: "",
+    subMenu: [
+      {
+        path: "Expenses Categories",
+        element: <ExpensesCatogories />,
+        permission: ""
+      }
+    ]
+  },
+  {
+    path: "People",
+    subMenu: [
+      {
+        path: "Customers",
+        element: <Customers />,
+        permission: ""
+      },
+      {
+        path: "Suppliers",
+        element: <Suppliers />,
+        permission: ""
+      },
+      {
+        path: "User",
+        element: <User />,
+        permission: ""
+      }
+    ]
+  },
+  {
+    path: "Purchases",
+    element: <Purchases />,
+    permission: "",
+    subMenu: [
+      {
+        path: "Purchases Return",
+        element: <PurchasesReturn />,
+        permission: ""
+      }
+    ]
+  },
+  {
+    path: "Reports",
+    element: <Reports />,
+    permission: ""
+  },
+  {
+    path: "Role / Permission",
+    element: <RolesAndPermission />,
+    permission: ""
+  },
+  {
+    path: "Sales",
+    element: <Sales />,
+    permission: "",
+    subMenu: [
+      {
+        path: "Sales Return",
+        element: <SalesReturn />,
+        permission: ""
+      }
+    ]
+  },
+  {
+    path: "Settings",
+    element: <Settings />,
+    permission: ""
+  },
+  {
+    path: "Transfers",
+    element: <Transfers />,
+    permission: ""
+  },
+  {
+    path: "WareHouse",
+    element: <WareHouse />,
+    permission: ""
+  }
+];
