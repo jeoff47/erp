@@ -22,8 +22,11 @@ import WareHouse from "./Pages/warehouse/WareHouse";
 import Transfers from "./Pages/transfers/Transfers";
 import Purchases from "./Pages/purchases/purchases";
 import PurchasesReturn from "./Pages/purchases/PurchasesReturn";
-import { MdDashboard } from "react-icons/md";
-
+import { MdDashboard} from "react-icons/md";
+import { GiBoxUnpacking } from "react-icons/gi";
+import { FaBox, FaFileInvoice } from "react-icons/fa";
+import { FaBarcode } from "react-icons/fa6";
+import { TbPackages } from "react-icons/tb";
 export const route = [
   {
     path: "Dashboard",
@@ -33,20 +36,24 @@ export const route = [
   },
   {
     path: "Products",
+    icon:<FaBox />,
     subMenu: [
       {
         path:"Products",
         element: <Products />,
+        icon:<FaBox />,
         permission: ""
       },
       {
         path: "Product Categories",
         element: <ProductCategories />,
+        icon:<GiBoxUnpacking />,
         permission: ""
       },
       {
         path: "Base Unit",
         element: <BaseUnit />,
+        icon:<TbPackages />,
         permission: ""
       },
       {
@@ -57,6 +64,7 @@ export const route = [
       {
         path: "Print BarCode",
         element: <PrintBarCode />,
+        icon:<FaBarcode />,
         permission: ""
       },
       {
@@ -69,11 +77,13 @@ export const route = [
   {
     path: "Qoutations",
     element: <Qoutations />,
+    icon:<FaFileInvoice />,
     permission: ""
   },
   {
     path: "Adjustments",
     element: <Adjustments />,
+    icon:<FaFileInvoice />,
     permission: ""
   },
   {

@@ -23,7 +23,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`flex bg-red-100 h-screen p-6 ${open ? "w-64" : "w-20"} duration-300 relative`}
+      className={`flex bg-red-100 h-screen p-6 ${open ? "w-64" : "w-20"} duration-300 relative m-0 flex-col`}
     >
       <div
         className={`text-green text-3xl absolute -right-3 top-9 rounded-full 
@@ -33,7 +33,7 @@ const SideBar = () => {
         <FaAngleLeft />
       </div>
 
-      <div>
+      <div className="py-3">
         logo
       </div>
 
@@ -41,17 +41,17 @@ const SideBar = () => {
         {route.map((route, index) => (
           <div key={index}>
             <li
-              className="flex items-center text-sm gap-x-4 cursor-pointer p-2 hover:bg-gray-200"
+              className="flex items-center text-sm gap-x-4 cursor-pointer py-2 hover:bg-gray-200"
               onClick={() => route.subMenu && toggleSubMenu(route.path)} // Toggle submenu on click
             >
-              <span>{route.icon}</span>
+              <span className="text-2xl">{route.icon}</span>
                   {open && <span>{route.path}
                     
               </span>}
               {/* If the route has a submenu, toggle its icon */}
               {route.subMenu && (
                 <FaAngleRight
-                  className={`${subMenuStates[route.path] ? "rotate-90" : ""} ml-auto`} // Rotate on toggle
+                  className={`${subMenuStates[route.path] ? "rotate-90" : ""} ${open ?"":"hidden"} ml-auto`} // Rotate on toggle
                 />
               )}
             </li>
