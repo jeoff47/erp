@@ -37,38 +37,39 @@ const SideBar = () => {
         logo
       </div>
 
-      <ul className="pt-6">
-        {route.map((route, index) => (
-          <div key={index}>
-            <li
-              className="flex items-center text-sm gap-x-4 cursor-pointer py-2 hover:bg-gray-200"
-              onClick={() => route.subMenu && toggleSubMenu(route.path)} // Toggle submenu on click
-            >
-              <span className="text-2xl">{route.icon}</span>
-                  {open && <span>{route.path}
-                    
-              </span>}
-              {/* If the route has a submenu, toggle its icon */}
-              {route.subMenu && (
-                <FaAngleRight
-                  className={`${subMenuStates[route.path] ? "rotate-90" : ""} ${open ?"":"hidden"} ml-auto`} // Rotate on toggle
-                />
-              )}
-            </li>
+      {route.map((route, index) => (
+  <div key={index}>
+    <li
+      className="flex items-center text-sm gap-x-4 cursor-pointer py-2 hover:bg-gray-200"
+      onClick={() => route.subMenu && toggleSubMenu(route.path)} // Toggle submenu on click
+    >
+      <span className="text-2xl">{route.icon}</span>
+      {open && (
+        <Link href={route.path}>
+          <span>{route.path}</span>
+        </Link>
+      )}
+      {/* If the route has a submenu, toggle its icon */}
+      {route.subMenu && (
+        <FaAngleRight
+          className={`${subMenuStates[route.path] ? "rotate-90" : ""} ${open ? "" : "hidden"} ml-auto`} // Rotate on toggle
+        />
+      )}
+    </li>
 
-            {/* Render submenu if it's open */}
-            {route.subMenu && subMenuStates[route.path] && open && (
-              <ul>
-                {route.subMenu.map((subMenuItem, index) => (
-                  <li key={index} className="text-gray-500 text-sm pl-6 py-2">
-                    {subMenuItem.title}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+    {/* Render submenu if it's open */}
+    {route.subMenu && subMenuStates[route.path] && open && (
+      <ul>
+        {route.subMenu.map((subMenuItem, index) => (
+          <li key={index} className="text-gray-500 text-sm pl-6 py-2">
+            {subMenuItem.title}
+          </li>
         ))}
       </ul>
+    )}
+  </div>
+))}
+
     </div>
   );
 };

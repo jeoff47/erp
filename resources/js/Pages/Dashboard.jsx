@@ -2,6 +2,7 @@ import SideBar from '@/Components/sidebar/SideBar';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
+
 export default function Dashboard() {
     return (
         <AuthenticatedLayout
@@ -14,6 +15,7 @@ export default function Dashboard() {
             <Head title="Dashboard" />
 
             <SideBar />
+            
         </AuthenticatedLayout>
     );
 }
