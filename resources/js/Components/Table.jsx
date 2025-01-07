@@ -5,9 +5,9 @@ const Table = ({columns, className="",...props}) => {
     <div className={className}>
       <table className='min-w-full table-auto border-collapse border border-gray-300 rounded-lg'>
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-black">
             {columns.map((columns,index)=>(
-              <th key={index} className="px-4 py-2 text-left font-semibold text-gray-700 border-b">
+              <th key={index} className="px-4 py-2 text-left font-semibold text-white border-b">
                 {columns.header}
                 </th>
             ))}
