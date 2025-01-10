@@ -8,6 +8,7 @@ const ProductsTable = () => {
     <div>ProductsTable
       <Table columns={ProductData.columns} data={ProductData.product}/>
     </div>
+    
   )
 }
 
