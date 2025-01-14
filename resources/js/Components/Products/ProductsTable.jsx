@@ -6,7 +6,7 @@ const ProductsTable = () => {
 
   return (
     <div>ProductsTable
-      <Table columns={ProductData.columns} data={ProductData.product}/>
+      <Table columns={ProductData.columns} data={ProductData.data}/>
     </div>
     
   )

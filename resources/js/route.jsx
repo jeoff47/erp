@@ -12,7 +12,7 @@ import PrintBarCode from "./Pages/products/PrintBarCode";
 import ProductCategories from "./Pages/products/ProductCategories";
 import Products from "./Pages/products/Products";
 import Units from "./Pages/products/Units";
-import Qoutations from "./Pages/Qoutation/Qoutations";
+import Qoutations from "./Pages/Quotation/Qoutations";
 import Reports from "./Pages/reports/Reports";
 import RolesAndPermission from "./Pages/rolesAndPermission/RolesAndPermission";
 import Sales from "./Pages/sales/Sales";

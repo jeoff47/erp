@@ -1,7 +1,7 @@
 import SideBar from '@/Components/sidebar/SideBar';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import PrintBarCode from './products/PrintBarCode';
+import Adjustments from './adjustments/Adjustments';
 
 
 export default function Dashboard() {
@@ -17,7 +17,7 @@ export default function Dashboard() {
             <div className="flex w-max">
 
             <SideBar />
-            <PrintBarCode/>
+            <Adjustments/>
             </div>
             
         </AuthenticatedLayout>
