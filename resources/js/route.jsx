@@ -2,7 +2,7 @@ import Adjustments from "./Pages/adjustments/Adjustments";
 import Currencies from "./Pages/currencies/Currencies";
 import Dashboard from "./Pages/Dashboard";
 import Expenses from "./Pages/expenses/Expenses";
-import ExpensesCatogories from "./Pages/expenses/ExpensesCatogories";
+import ExpensesCategories from "./Pages/expenses/ExpensesCategories";
 import Customers from "./Pages/people/Customers";
 import Suppliers from "./Pages/people/Suppliers";
 import User from "./Pages/people/User";
@@ -12,7 +12,7 @@ import PrintBarCode from "./Pages/products/PrintBarCode";
 import ProductCategories from "./Pages/products/ProductCategories";
 import Products from "./Pages/products/Products";
 import Units from "./Pages/products/Units";
-import Qoutations from "./Pages/Quotation/Qoutations";
+import Quotations from "./Pages/quotation/Quotations";
 import Reports from "./Pages/reports/Reports";
 import RolesAndPermission from "./Pages/rolesAndPermission/RolesAndPermission";
 import Sales from "./Pages/sales/Sales";
@@ -75,8 +75,8 @@ export const route = [
     ]
   },
   {
-    path: "Qoutations",
-    element: <Qoutations />,
+    path: "Quotations",
+    element: <Quotations />,
     icon:<FaFileInvoice />,
     permission: ""
   },
@@ -98,7 +98,7 @@ export const route = [
     subMenu: [
       {
         path: "Expenses Categories",
-        element: <ExpensesCatogories />,
+        element: <ExpensesCategories />,
         permission: ""
       }
     ]

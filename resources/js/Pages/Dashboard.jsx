@@ -1,7 +1,8 @@
 import SideBar from '@/Components/sidebar/SideBar';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import Adjustments from './adjustments/Adjustments';
+import CreateExpensesCategories from '@/Components/form/CreateExpensesCategories';
+
 
 
 export default function Dashboard() {
@@ -17,7 +18,7 @@ export default function Dashboard() {
             <div className="flex w-max">
 
             <SideBar />
-            <Adjustments/>
+            <CreateExpensesCategories/>
             </div>
             
         </AuthenticatedLayout>
