@@ -5,7 +5,7 @@ import ProductCategoryData from '../../Data/ProductCategoryData'
 const ProductCategoryTable = () => {
   return (
     <div>
-      <Table columns={ProductCategoryData.columns} data={ProductCategoryData.product}/>
+      <Table columns={ProductCategoryData.columns} data={ProductCategoryData.data}/>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const CreateWarehouse = () => {
   return (
       <div className='p-6 w-full'>
               <div className='flex py-2'>
-                  <h1>Create Supplier</h1>
+                  <h1>Create Warehouse</h1>
                   <SecondaryButton><IoMdClose /></SecondaryButton>
               </div>
               <form action="" className='bg-white p-2 flex'>

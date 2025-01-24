@@ -1,8 +1,9 @@
 import SideBar from '@/Components/sidebar/SideBar';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
-import CreateRoleForm from '@/Components/form/CreateRoleForm';
-import CreateWarehouse from '@/Components/form/CreateWarehouse';
+
+
+import Products from './products/Products';
 
 
 
@@ -19,7 +20,7 @@ export default function Dashboard() {
             <div className="flex w-max">
 
             <SideBar />
-            <CreateWarehouse/>
+            <Products/>
             </div>
             
         </AuthenticatedLayout>

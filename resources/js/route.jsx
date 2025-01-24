@@ -18,7 +18,7 @@ import RolesAndPermission from "./Pages/rolesAndPermission/RolesAndPermission";
 import Sales from "./Pages/sales/Sales";
 import SalesReturn from "./Pages/sales/SalesReturn";
 import Settings from "./Pages/settings/Settings";
-import WareHouse from "./Pages/warehouse/WareHouse";
+import WareHouse from "./Pages/warehouse/Warehouse";
 import Transfers from "./Pages/transfers/Transfers";
 import Purchases from "./Pages/purchases/purchases";
 import PurchasesReturn from "./Pages/purchases/PurchasesReturn";

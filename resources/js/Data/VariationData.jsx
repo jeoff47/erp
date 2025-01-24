@@ -1,5 +1,4 @@
-const VariationData = () => {
-    return {
+const VariationData =  {
       columns: [
         { header: 'Product ID', accessor: 'id' },
         { header: 'VARIATION NAME', accessor: 'name' },
@@ -11,8 +10,7 @@ const VariationData = () => {
         { id: 2, name: 'Product 2', variationType: 'Adult and children', action: ['edit', 'delete'] },
         { id: 3, name: 'Product 3', variationType: 'Adult and children', action: ['edit', 'delete']}
       ]
-    };
-  };
+};
   
   export default VariationData;
   

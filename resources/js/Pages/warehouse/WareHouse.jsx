@@ -1,9 +1,21 @@
-import React from 'react'
+import PrimaryButton from "@/Components/PrimaryButton"
+import WarehouseTable from "@/Components/table/WarehouseTable"
 
-const WareHouse = () => {
+
+const Warehouse = () => {
   return (
-    <div>WareHouse</div>
+    <div>
+      <div className='p-6'>
+      <div>
+        <div>
+          <PrimaryButton></PrimaryButton>
+          <PrimaryButton> Create Warehouse</PrimaryButton>
+        </div>
+      </div>
+      <WarehouseTable/>
+    </div>
+    </div>
   )
 }
 
-export default WareHouse
+export default Warehouse
