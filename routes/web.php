@@ -14,9 +14,14 @@ Route::get('/', function () {
     ]);
 }); 
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/create-product', function () {
+    return Inertia::render('Components/form/CreateProductForm'); // Ensure this matches the filename exactly (CreateProduct.jsx)
+});
 
 
 Route::middleware('auth')->group(function () {
