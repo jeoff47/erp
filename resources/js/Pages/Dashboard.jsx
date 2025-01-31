@@ -1,28 +1,26 @@
-import SideBar from '@/Components/sidebar/SideBar';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
 import Products from './products/Products';
+import LayOut from '@/Layouts/LayOut';
 
 
 
 export default function Dashboard() {
     return (
         <div className='flex'>
-            <div>
-                <SideBar/>
-            </div>
             <div className='w-full'>
-                <AuthenticatedLayout
-                    
-                >
-                    <Head title="Dashboard" />
-                    <div className="flex w-full">
+                <LayOut>
+                    <AuthenticatedLayout>
+                        <Head title="Dashboard" />
+                        
 
-                    <Products className="w-full"/>
-                    </div>
-            
-                </AuthenticatedLayout>
+                        <Products className="w-full"/>
+                        
+                
+                    </AuthenticatedLayout>
+                    
+                </LayOut>
             </div>
         </div>
     );

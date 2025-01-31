@@ -35,7 +35,7 @@ export const route = [
     icon: <MdDashboard />
   },
   {
-    path: "Products",
+    path: "Product",
     icon:<FaBox />,
     subMenu: [
       {
@@ -173,3 +173,4 @@ export const route = [
     permission: ""
   }
 ];
+export default route

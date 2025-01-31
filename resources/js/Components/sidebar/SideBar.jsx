@@ -1,28 +1,20 @@
 import { useState } from "react";
-import { Link } from "@inertiajs/react";
-import clsx from "clsx"; // Import clsx for conditional class management
+import { Link, usePage } from "@inertiajs/react"; // usePage is useful for getting the current active path
+import clsx from "clsx"; 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { route } from "../../route"; // Ensure the route array is correctly imported
 import ApplicationLogo from "../ApplicationLogo";
+import route from "../../route"
 
+// Assuming 'route' is your routes array
 const SideBar = () => {
   const [open, setOpen] = useState(true);
-
-  // State for managing submenus per route
-  const [subMenuStates, setSubMenuStates] = useState(
-    route.reduce((acc, item) => {
-      acc[item.path] = false; // initialize each submenu as closed
-      return acc;
-    }, {})
-  );
-
-  // Get the current active path
-  const activePath = window.location.pathname;
+  const [subMenuStates, setSubMenuStates] = useState({});
+  const { url } = usePage(); // This helps to get the current active URL dynamically
 
   const toggleSubMenu = (path) => {
     setSubMenuStates((prevState) => ({
       ...prevState,
-      [path]: !prevState[path], // toggle the specific submenu
+      [path]: !prevState[path], // Toggle the submenu
     }));
   };
 
@@ -30,10 +22,12 @@ const SideBar = () => {
     <div
       className={`flex bg-gray-100 h-screen p-6 ${open ? "w-64" : "w-20"} duration-300 relative m-0 flex-col`}
     >
+      {/* Toggle button to collapse/expand sidebar */}
       <div
         className={`text-green text-3xl absolute -right-3 top-9 rounded-full 
           bg-green-200 h-8 w-8 border border-green cursor-pointer ${!open && "rotate-180"}`}
         onClick={() => setOpen(!open)}
+        aria-label={open ? "Collapse Sidebar" : "Expand Sidebar"}
       >
         <FaAngleLeft />
       </div>
@@ -52,14 +46,14 @@ const SideBar = () => {
               className={clsx(
                 "flex items-center text-sm gap-x-4 cursor-pointer hover:bg-gray-200 w-full",
                 {
-                  "border-l-4 border-blue-500": activePath === routeItem.path, // Add blue left border if active
+                  "border-l-4 border-blue-500": url === routeItem.path, // Highlight active item
                 }
               )}
-              onClick={() => routeItem.subMenu && toggleSubMenu(routeItem.path)} // Toggle submenu on click
+              onClick={() => routeItem.subMenu && toggleSubMenu(routeItem.path)} 
             >
               <span className="text-2xl">{routeItem.icon}</span>
               {open && (
-                <Link href={routeItem.path}>
+                <Link href={routeItem.path} className="w-full">
                   <span>{routeItem.path}</span>
                 </Link>
               )}
