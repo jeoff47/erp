@@ -15,7 +15,7 @@ export default function Dashboard() {
                         <Head title="Dashboard" />
                         
 
-                        <Products className="w-full"/>
+                        <Products className="w-1/2"/>
                         
                 
                     </AuthenticatedLayout>

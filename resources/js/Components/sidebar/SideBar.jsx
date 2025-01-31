@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { Link, usePage } from "@inertiajs/react"; // usePage is useful for getting the current active path
+import { Link, usePage } from "@inertiajs/react";
 import clsx from "clsx"; 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import ApplicationLogo from "../ApplicationLogo";
-import route from "../../route"
+import route from "../../route"; // Ensure paths start with "/"
 
-// Assuming 'route' is your routes array
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const [subMenuStates, setSubMenuStates] = useState({});
-  const { url } = usePage(); // This helps to get the current active URL dynamically
+  const { url } = usePage(); // Get current URL
 
   const toggleSubMenu = (path) => {
     setSubMenuStates((prevState) => ({
@@ -19,76 +18,81 @@ const SideBar = () => {
   };
 
   return (
-    <div
-      className={`flex bg-gray-100 h-screen p-6 ${open ? "w-64" : "w-20"} duration-300 relative m-0 flex-col`}
-    >
-      {/* Toggle button to collapse/expand sidebar */}
-      <div
-        className={`text-green text-3xl absolute -right-3 top-9 rounded-full 
-          bg-green-200 h-8 w-8 border border-green cursor-pointer ${!open && "rotate-180"}`}
-        onClick={() => setOpen(!open)}
-        aria-label={open ? "Collapse Sidebar" : "Expand Sidebar"}
-      >
+    <div className={`flex bg-gray-50 h-screen ${open ? "w-64" : "w-20"} duration-300 relative flex-col`}>
+      {/* Toggle button */}
+      <div className={`text-white text-3xl absolute -right-4 top-10 rounded-full
+          border-blue-500 bg-blue-600 h-10 w-10 border-4 cursor-pointer ${!open && "rotate-180"}`}
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Collapse Sidebar" : "Expand Sidebar"}>
         <FaAngleLeft />
       </div>
 
-      <div className="flex shrink-0 items-center mb-6">
+
+      {/* Logo */}
+      <div className="flex shrink-0 items-center mb-4 pt-2 p-2">
         <Link href="/">
           <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
         </Link>
       </div>
 
-      <ul className="space-y-2">
-        {route.map((routeItem) => (
-          <div key={routeItem.path}>
-            {/* Main Menu Item */}
-            <li
-              className={clsx(
-                "flex items-center text-sm gap-x-4 cursor-pointer hover:bg-gray-200 w-full",
-                {
-                  "border-l-4 border-blue-500": url === routeItem.path, // Highlight active item
-                }
-              )}
-              onClick={() => routeItem.subMenu && toggleSubMenu(routeItem.path)} 
-            >
-              <span className="text-2xl">{routeItem.icon}</span>
-              {open && (
-                <Link href={routeItem.path} className="w-full">
-                  <span>{routeItem.path}</span>
-                </Link>
-              )}
+      {/* Menu Items Container with scroll */}
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <ul className="space-y-2">
+          {route.map((routeItem) => (
+            <div key={routeItem.path}>
+              {/* Main Menu Item */}
+              <li
+                className={clsx(
+                  "flex items-center text-sm gap-x-4 cursor-pointer hover:bg-gray-200 w-full px-3 py-2",
+                  {
+                    // Add blue border on the right for active items
+                    "border-r-4 border-blue-500": url.toLowerCase() === `/${routeItem.path.toLowerCase()}`,
+                    // Highlight the background of the active item
+                    "bg-blue-100": url.toLowerCase() === `/${routeItem.path.toLowerCase()}`,
+                  }
+                )}
+                onClick={() => routeItem.subMenu && toggleSubMenu(routeItem.path)}
+              >
+                <span className="text-2xl">{routeItem.icon}</span>
+                {open && (
+                  <Link href={`/${routeItem.path.toLowerCase()}`} className="w-full">
+                    <span>{routeItem.path}</span>
+                  </Link>
+                )}
 
-              {/* Show submenu toggle icon if there is a submenu */}
-              {routeItem.subMenu && (
-                <FaAngleRight
-                  className={clsx(
-                    subMenuStates[routeItem.path] && "rotate-90", // Rotate on toggle
-                    { "hidden": !open }
-                  )}
-                  aria-expanded={subMenuStates[routeItem.path]} // ARIA attribute for accessibility
-                />
-              )}
-            </li>
+                {/* Submenu Toggle Icon */}
+                {routeItem.subMenu && (
+                  <FaAngleRight
+                    className={clsx("transition-transform duration-300", {
+                      "rotate-90": subMenuStates[routeItem.path],
+                      "hidden": !open
+                    })}
+                  />
+                )}
+              </li>
 
-            {/* Submenu Items */}
-            {routeItem.subMenu && subMenuStates[routeItem.path] && open && (
-              <ul className="pl-6 space-y-1">
-                {routeItem.subMenu.map((subMenuItem) => (
-                  <li
-                    key={subMenuItem.path}
-                    className="text-gray-500 text-sm py-2 hover:bg-gray-200 w-full"
-                    aria-expanded={subMenuStates[routeItem.path]} // ARIA attribute for submenu
-                  >
-                    <Link href={subMenuItem.path}>
-                      <span>{subMenuItem.path}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </ul>
+              {/* Submenu Items */}
+              {routeItem.subMenu && subMenuStates[routeItem.path] && open && (
+                <ul className="pl-6 space-y-1">
+                  {routeItem.subMenu.map((subMenuItem) => (
+                    <li
+                      key={subMenuItem.path}
+                      className={clsx("text-gray-500 text-sm py-2 hover:bg-gray-200 w-full px-3", {
+                        // Highlight the background of active submenu item
+                        "bg-gray-200": url.toLowerCase() === `/${subMenuItem.path.toLowerCase()}`
+                      })}
+                    >
+                      <Link href={`/${subMenuItem.path.toLowerCase()}`}>
+                        <span>{subMenuItem.path}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

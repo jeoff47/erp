@@ -35,7 +35,7 @@ export const route = [
     icon: <MdDashboard />
   },
   {
-    path: "Product",
+    path: "Products",
     icon:<FaBox />,
     subMenu: [
       {

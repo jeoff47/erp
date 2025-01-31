@@ -2,8 +2,10 @@ import React from 'react'
 import InputLabel from '../InputLabel'
 import PrimaryButton from '../PrimaryButton'
 import SecondaryButton from '../SecondaryButton'
+import { usePage } from '@inertiajs/react'
 
 const CreateProductForm = () => {
+  const user = usePage().props.auth.user;
   return (
     <div className="p-6">
   <div className="flex w-full justify-between items-center mb-6">

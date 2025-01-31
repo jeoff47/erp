@@ -48,7 +48,7 @@ const Products = () => {
   return (
     <div className="p-4">
       <h1>Products</h1>
-      <div className="flex justify-between items-center space-x-4">
+      <div className="flex  items-center space-x-4">
         {/* Search Bar */}
         <div className="flex-grow">
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} className="w-96" />
@@ -57,7 +57,7 @@ const Products = () => {
         {/* Filter Icon and Action Buttons */}
         <div className="flex items-center space-x-4">
           {/* Filter Icon */}
-          <SecondaryButton className="w-12 h-12 flex justify-center items-center text-sm bg-gray-200 rounded-md hover:bg-gray-300 transition-all">
+          <SecondaryButton className="w-12 h-10 flex justify-center items-center text-sm bg-gray-200 rounded-md hover:bg-gray-300 transition-all">
             <FaFilter className="font-medium" />
           </SecondaryButton>
 
@@ -66,7 +66,7 @@ const Products = () => {
             <select
               value={selectedFormat}
               onChange={(e) => setSelectedFormat(e.target.value)}
-              className="bg-gray-200 text-sm px-4 py-2 rounded-md"
+              className="bg-gray-200 text-sm px-8 py-2 rounded-md"
             >
               <option value="csv">CSV</option>
               <option value="xlsx">Excel</option>
@@ -84,7 +84,7 @@ const Products = () => {
             Import Product
           </SecondaryButton>
 
-          <Link href="/CreateProductForm">
+          <Link href={route('register')}>
             <SecondaryButton className="w-auto px-4 py-2 text-sm bg-gray-200 rounded-md hover:bg-gray-300 transition-all">
               Create Product
             </SecondaryButton>
