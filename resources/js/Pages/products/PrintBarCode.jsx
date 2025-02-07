@@ -5,9 +5,14 @@ import InputLabel from '@/Components/InputLabel'
 import { FaSearch } from "react-icons/fa";
 import Table from '@/Components/Table';
 import PrintBarCodeData from '@/Data/PrintBarCodeData';
+import LayOut from '@/Layouts/LayOut';
+
 
 const PrintBarCode = () => {
   return (
+   
+    <LayOut>
+
     <div>
       <form className='bg-white p-4 rounded'>
         <div>
@@ -52,6 +57,8 @@ const PrintBarCode = () => {
                    
       </form>
     </div>
+    </LayOut>
+  
   )
 }
 

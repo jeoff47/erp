@@ -2,9 +2,14 @@ import React from 'react'
 import { FaFilter } from 'react-icons/fa'
 import SecondaryButton from '@/Components/SecondaryButton'
 import CustomerTable from '@/Components/table/CustomerTable'
+import LayOut from '@/Layouts/LayOut'
+
 
 const User = () => {
   return (
+   
+    <LayOut>
+
     <div className='p-4'>Suppliers
       <div className="items-center space-x-4">
         {/* 
@@ -28,6 +33,8 @@ const User = () => {
       
       
     </div>
+    </LayOut>
+        
   )
 }
 

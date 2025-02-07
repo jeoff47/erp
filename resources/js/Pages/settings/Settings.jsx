@@ -1,8 +1,15 @@
+
+import LayOut from '@/Layouts/LayOut'
 import React from 'react'
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <LayOut>
+
+
+      <div>Settings</div>
+
+    </LayOut>
   )
 }
 

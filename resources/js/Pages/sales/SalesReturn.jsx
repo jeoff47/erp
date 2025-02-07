@@ -1,9 +1,12 @@
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
+import LayOut from '@/Layouts/LayOut'
 
 
 const SalesReturn = () => {
   return (
+    <LayOut>
+
     <div>
       <div>
         <div className='p-6'>
@@ -17,6 +20,7 @@ const SalesReturn = () => {
         </div>
       </div>
     </div>
+    </LayOut>
   )
 }
 

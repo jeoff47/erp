@@ -2,9 +2,14 @@ import React from 'react'
 import SecondaryButton from '@/Components/SecondaryButton'
 import SupplierTable from '@/Components/table/SupplierTable'
 import { FaFilter } from 'react-icons/fa'
+import LayOut from '@/Layouts/LayOut'
+
 
 const Suppliers = () => {
   return (
+    <LayOut>
+
+
     <div className='p-4'>Suppliers
       <div className="items-center space-x-4">
         {/* 
@@ -28,6 +33,8 @@ const Suppliers = () => {
       
       
     </div>
+    </LayOut>
+        
   )
 }
 

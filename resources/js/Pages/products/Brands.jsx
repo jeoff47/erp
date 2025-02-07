@@ -1,8 +1,13 @@
 import BrandTable from '@/Components/table/BrandTable'
+import LayOut from '@/Layouts/LayOut'
+
 import React from 'react'
 
 const Brands = () => {
   return (
+  
+    <LayOut>
+
     <div>Brands
       <div>
         <PrimaryButton  className="bg-orange-400"> Create Brand</PrimaryButton>
@@ -11,6 +16,8 @@ const Brands = () => {
         <BrandTable/>
       </div>
     </div>
+    </LayOut>
+    
   )
 }
 

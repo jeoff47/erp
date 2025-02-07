@@ -22,11 +22,13 @@ import WareHouse from "./Pages/warehouse/Warehouse";
 import Transfers from "./Pages/transfers/Transfers";
 import Purchases from "./Pages/purchases/purchases";
 import PurchasesReturn from "./Pages/purchases/PurchasesReturn";
-import { MdDashboard} from "react-icons/md";
+
+import { MdDashboard } from "react-icons/md";
 import { GiBoxUnpacking } from "react-icons/gi";
 import { FaBox, FaFileInvoice } from "react-icons/fa";
 import { FaBarcode } from "react-icons/fa6";
 import { TbPackages } from "react-icons/tb";
+
 export const route = [
   {
     path: "Dashboard",
@@ -35,25 +37,25 @@ export const route = [
     icon: <MdDashboard />
   },
   {
-    path: "Products",
-    icon:<FaBox />,
+    path: "Product",
+    icon: <FaBox />,
     subMenu: [
       {
-        path:"Products",
+        path: "Products",
         element: <Products />,
-        icon:<FaBox />,
+        icon: <FaBox />,
         permission: ""
       },
       {
         path: "Product Categories",
         element: <ProductCategories />,
-        icon:<GiBoxUnpacking />,
+        icon: <GiBoxUnpacking />,
         permission: ""
       },
       {
         path: "Base Unit",
         element: <BaseUnit />,
-        icon:<TbPackages />,
+        icon: <TbPackages />,
         permission: ""
       },
       {
@@ -64,7 +66,7 @@ export const route = [
       {
         path: "Print BarCode",
         element: <PrintBarCode />,
-        icon:<FaBarcode />,
+        icon: <FaBarcode />,
         permission: ""
       },
       {
@@ -77,13 +79,13 @@ export const route = [
   {
     path: "Quotations",
     element: <Quotations />,
-    icon:<FaFileInvoice />,
+    icon: <FaFileInvoice />,
     permission: ""
   },
   {
     path: "Adjustments",
     element: <Adjustments />,
-    icon:<FaFileInvoice />,
+    icon: <FaFileInvoice />,
     permission: ""
   },
   {
@@ -173,4 +175,5 @@ export const route = [
     permission: ""
   }
 ];
-export default route
+
+export default route;

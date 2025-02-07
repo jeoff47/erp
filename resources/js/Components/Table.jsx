@@ -1,4 +1,8 @@
+import { Link } from "@inertiajs/react";
 import React, { useState } from "react";
+import PrimaryButton from "./PrimaryButton";
+import { MdModeEdit } from "react-icons/md";
+import { FaTrash } from "react-icons/fa";
 
 const Table = ({ columns, data, defaultItemsPerPage = 5 }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -55,6 +59,8 @@ const Table = ({ columns, data, defaultItemsPerPage = 5 }) => {
                   {col.header}
                 </th>
               ))}
+              {/* Add header for the actions column */}
+              <th className="px-4 py-2 border-b text-left text-sm font-medium text-gray-100">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -72,11 +78,20 @@ const Table = ({ columns, data, defaultItemsPerPage = 5 }) => {
                       {row[col.accessor]}
                     </td>
                   ))}
+                  {/* Add a separate td for the action buttons */}
+                  <td className="px-4 py-2 border-b flex text-sm text-gray-700">
+                    <Link href="/">
+                        <MdModeEdit className="text-blue-400 text-xl mx-1"/>
+                    </Link>
+                    <Link href="/">
+                        <FaTrash  className="text-red-400 text-xl mx-1"/>
+                    </Link>
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-2 text-center text-gray-500">
+                <td colSpan={columns.length + 1} className="px-4 py-2 text-center text-gray-500">
                   No matching data found.
                 </td>
               </tr>

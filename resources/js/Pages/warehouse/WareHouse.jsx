@@ -1,9 +1,12 @@
 import PrimaryButton from "@/Components/PrimaryButton"
 import WarehouseTable from "@/Components/table/WarehouseTable"
+import LayOut from "@/Layouts/LayOut"
 
 
 const Warehouse = () => {
   return (
+    <LayOut>
+
     <div>
       <div className='p-6'>
       <div>
@@ -15,6 +18,7 @@ const Warehouse = () => {
       <WarehouseTable/>
     </div>
     </div>
+    </LayOut>
   )
 }
 

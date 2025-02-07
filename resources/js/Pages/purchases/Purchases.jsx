@@ -1,10 +1,15 @@
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
 import QuotationTable from '@/Components/table/QuotationTable'
+import LayOut from '@/Layouts/LayOut'
+
 
 
 const Purchases = () => {
   return (
+    
+    <LayOut>
+
     <div>
       <div className='p-6'>
       <div>
@@ -17,6 +22,8 @@ const Purchases = () => {
       <QuotationTable/>
     </div>
     </div>
+    </LayOut>
+    
   )
 }
 

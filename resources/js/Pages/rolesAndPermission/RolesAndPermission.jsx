@@ -2,15 +2,20 @@ import React from 'react'
 import SecondaryButton from '@/Components/SecondaryButton'
 import RolesTable from '@/Components/table/RolesTable'
 import { FaFilter } from 'react-icons/fa'
+import LayOut from '@/Layouts/LayOut'
+
 
 const RolesAndPermission = () => {
   return (
+  
+    <LayOut>
+
     <div className='p-4'>Suppliers
       <div className="items-center space-x-4">
         {/* 
         
         <Role SearchButton className='p-2'/>
-         Role Search Button with spacing to the right */}
+        Role Search Button with spacing to the right */}
 
         {/* Container for action buttons */}
         <div className='p-2 flex text-sm flex-wrap items-center justify-start space-x-2'>
@@ -28,6 +33,8 @@ const RolesAndPermission = () => {
       
       
     </div>
+       
+    </LayOut>
   )
 }
 

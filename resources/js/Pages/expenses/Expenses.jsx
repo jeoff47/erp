@@ -1,8 +1,13 @@
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
+import LayOut from '@/Layouts/LayOut'
+
 
 const Expenses = () => {
   return (
+  
+    <LayOut>
+
     <div className='p-6'>
       <div>
           <div>
@@ -15,6 +20,8 @@ const Expenses = () => {
           <span className=' w-full justify-center'>There are no product</span>
         </div>
     </div>
+    </LayOut>
+  
   )
 }
 

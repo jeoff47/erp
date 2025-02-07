@@ -24,71 +24,98 @@ Route::get('/BaseUnit', function () {
 })->middleware(['auth', 'verified'])->name('BaseUnit');
 
 Route::get('/Brands', function () {
-    return Inertia::render('Pages/products/Adjuments'); 
-});
+    return Inertia::render('products/Adjustments'); 
+})->middleware(['auth', 'verified'])->name('Adjustments');
+
 Route::get('/Currencies', function () {
-    return Inertia::render('Pages/currencies/Currencies'); 
-});
+    return Inertia::render('currencies/Currencies'); 
+})->middleware(['auth', 'verified'])->name('Currencies');
+
 Route::get('/Customers', function () {
-    return Inertia::render('Pages/people/Customers'); 
-});
+    return Inertia::render('people/Customers'); 
+})->middleware(['auth', 'verified'])->name('Customers');
+
 Route::get('/Expenses', function () {
-    return Inertia::render('Pages/expenses/Expenses'); 
-});
+    return Inertia::render('expenses/Expenses'); 
+})->middleware(['auth', 'verified'])->name('Expenses');
+
 Route::get('/ExpensesCategories', function () {
-    return Inertia::render('Pages/expenses/ExpensesCategories'); 
-});
+    return Inertia::render('expenses/ExpensesCategories'); 
+})->middleware(['auth', 'verified'])->name('ExpensesCategories');
+
 Route::get('/PrindBarCode', function () {
-    return Inertia::render('Pages/products/PrintBarCode'); 
-});
+    return Inertia::render('products/PrintBarCode'); 
+})->middleware(['auth', 'verified'])->name('PrintBarCode');
+
 Route::get('/ProductsCategories', function () {
-    return Inertia::render('Pages/products/ProductsCategories'); 
-});
+    return Inertia::render('products/ProductsCategories'); 
+})->middleware(['auth', 'verified'])->name('ProductsCategories');
+
 Route::get('/Products', function () {
-    return Inertia::render('Pages/products/Products'); 
-});
+    return Inertia::render('products/Products'); 
+})->middleware(['auth', 'verified'])->name('Products');
+
 Route::get('/Purchases', function () {
-    return Inertia::render('Pages/purchases/Purchases'); 
-});
+    return Inertia::render('purchases/Purchases'); 
+})->middleware(['auth', 'verified'])->name('Purchases');
+
 Route::get('/PurchasesReturn', function () {
-    return Inertia::render('Pages/products/PurchasesReturn'); 
-});
+    return Inertia::render('products/PurchasesReturn'); 
+})->middleware(['auth', 'verified'])->name('PurchasesReturn');
+
 Route::get('/Quotation', function () {
-    return Inertia::render('Pages/qoutation/Quotations'); 
-});
+    return Inertia::render('qoutation/Quotations'); 
+})->middleware(['auth', 'verified'])->name('Quotations');
+
 Route::get('/Reports', function () {
-    return Inertia::render('Pages/report/Reports'); 
-});
+    return Inertia::render('eport/Reports'); 
+})->middleware(['auth', 'verified'])->name('Reports');
+
 Route::get('/RolesAndPermission', function () {
-    return Inertia::render('Pages/rolesAndPremission/RolesAndPermission'); 
-});
+    return Inertia::render('rolesAndPremission/RolesAndPermission'); 
+})->middleware(['auth', 'verified'])->name('RolesAndPermission');
+
 Route::get('/Sales', function () {
-    return Inertia::render('Pages/sales/Sales'); 
-});
+    return Inertia::render('sales/Sales'); 
+})->middleware(['auth', 'verified'])->name('Sales');
+
 Route::get('/SalesReturn', function () {
-    return Inertia::render('Pages/sales/SalesReturn'); 
-});
+    return Inertia::render('sales/SalesReturn'); 
+})->middleware(['auth', 'verified'])->name('SalesReturn');
+
 Route::get('/Settings', function () {
-    return Inertia::render('Pages/settings/Settings'); 
-});
+    return Inertia::render('settings/Settings'); 
+})->middleware(['auth', 'verified'])->name('Settings');
+
 Route::get('/Suppliers', function () {
-    return Inertia::render('Pages/people/Suppliers'); 
-});
+    return Inertia::render('people/Suppliers'); 
+})->middleware(['auth', 'verified'])->name('Suppliers');
+
 Route::get('/Transfers', function () {
-    return Inertia::render('Pages/transfers/Transfers'); 
-});
+    return Inertia::render('transfers/Transfers'); 
+})->middleware(['auth', 'verified'])->name('Transfers');
+
 Route::get('/Units', function () {
-    return Inertia::render('Pages/products/Units'); 
-});
+    return Inertia::render('products/Units'); 
+})->middleware(['auth', 'verified'])->name('Units');
+
 Route::get('/User', function () {
-    return Inertia::render('Pages/people/User'); 
-});
+    return Inertia::render('people/User'); 
+})->middleware(['auth', 'verified'])->name('User');
+
 Route::get('/Variation', function () {
-    return Inertia::render('Pages/products/Variation'); 
-});
+    return Inertia::render('products/Variation'); 
+})->middleware(['auth', 'verified'])->name('Variation');
+
 Route::get('/Warehouse', function () {
-    return Inertia::render('Pages/warehouse/Warehouse'); 
-});
+    return Inertia::render('warehouse/Warehouse'); 
+})->middleware(['auth', 'verified'])->name('Warehouse');
+;
+
+Route::get('/CreateProductForm', function () {
+    return Inertia::render('Pages/products/CreateProductForm');
+})->middleware(['auth', 'verified'])->name('CreateProductForm');
+
 
 
 

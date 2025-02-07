@@ -1,9 +1,12 @@
 import React from 'react'
 import PrimaryButton from '@/Components/PrimaryButton'
 import QuotationData from '@/Data/QuotationData'
+import LayOut from '@/Layouts/LayOut'
 
 const Transfers = () => {
   return (
+    <LayOut>
+
     <div>
       <div className='p-6'>
       <div>
@@ -16,6 +19,7 @@ const Transfers = () => {
       <QuotationTable/>
     </div>
     </div>
+    </LayOut>
   )
 }
 

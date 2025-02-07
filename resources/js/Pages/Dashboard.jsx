@@ -1,8 +1,9 @@
+
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-import Products from './products/Products';
 import LayOut from '@/Layouts/LayOut';
+import CreateProductForm from '@/Components/form/CreateProductForm';
 
 
 
@@ -11,14 +12,11 @@ export default function Dashboard() {
         <div className='flex'>
             <div className='w-full'>
                 <LayOut>
-                    <AuthenticatedLayout>
-                        <Head title="Dashboard" />
-                        
-
-                        <Products className="w-1/2"/>
-                        
+                                    
                 
-                    </AuthenticatedLayout>
+                    <div> Dashboard</div>
+                
+                    
                     
                 </LayOut>
             </div>
