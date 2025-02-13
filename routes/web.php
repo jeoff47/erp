@@ -107,7 +107,7 @@ Route::get('/Variation', function () {
     return Inertia::render('products/Variation'); 
 })->middleware(['auth', 'verified'])->name('Variation');
 
-Route::get('/Warehouse', function () {
+Route::get('Warehouse', function () {
     return Inertia::render('warehouse/Warehouse'); 
 })->middleware(['auth', 'verified'])->name('Warehouse');
 ;
