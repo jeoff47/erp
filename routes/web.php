@@ -43,13 +43,13 @@ Route::get('/ExpensesCategories', function () {
     return Inertia::render('expenses/ExpensesCategories'); 
 })->middleware(['auth', 'verified'])->name('ExpensesCategories');
 
-Route::get('/PrindBarCode', function () {
+Route::get('/PrintBarCode', function () {
     return Inertia::render('products/PrintBarCode'); 
 })->middleware(['auth', 'verified'])->name('PrintBarCode');
 
-Route::get('/ProductsCategories', function () {
-    return Inertia::render('products/ProductsCategories'); 
-})->middleware(['auth', 'verified'])->name('ProductsCategories');
+Route::get('/ProductCategories', function () {
+    return Inertia::render('products/ProductCategories'); 
+})->middleware(['auth', 'verified'])->name('ProductCategories');
 
 Route::get('/Products', function () {
     return Inertia::render('products/Products'); 

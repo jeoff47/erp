@@ -1,14 +1,18 @@
+// SideBar.js
 import { useState } from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react"; // For Inertia.js navigation
 import clsx from "clsx"; 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import ApplicationLogo from "../ApplicationLogo";
-import route from "../../route"; // Ensure paths start with "/"
+import route from "../../route"; // Import the routes
 
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const [subMenuStates, setSubMenuStates] = useState({});
-  const { url } = usePage(); // Get current URL
+  const { url } = usePage(); // Get current URL from Inertia
+
+  // Normalize URL by converting to lowercase and removing trailing slashes
+  const normalizedUrl = url.toLowerCase().replace(/\/$/, "");
 
   const toggleSubMenu = (path) => {
     setSubMenuStates((prevState) => ({
@@ -20,13 +24,13 @@ const SideBar = () => {
   return (
     <div className={`flex bg-gray-50 h-screen ${open ? "w-64" : "w-20"} duration-300 relative flex-col`}>
       {/* Toggle button */}
-      <div className={`text-white text-3xl absolute -right-4 top-10 rounded-full
+      <div
+        className={`text-white text-3xl absolute -right-4 top-10 rounded-full
           border-blue-500 bg-blue-600 h-10 w-10 border-4 cursor-pointer ${!open && "rotate-180"}`}
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Collapse Sidebar" : "Expand Sidebar"}>
+        onClick={() => setOpen(!open)}
+        aria-label={open ? "Collapse Sidebar" : "Expand Sidebar"}>
         <FaAngleLeft />
       </div>
-
 
       {/* Logo */}
       <div className="flex shrink-0 items-center mb-4 pt-2 p-2">
@@ -45,10 +49,9 @@ const SideBar = () => {
                 className={clsx(
                   "flex items-center text-sm gap-x-4 cursor-pointer hover:bg-gray-200 w-full px-3 py-2",
                   {
-                    // Add blue border on the right for active items
-                    "border-r-4 border-blue-500": url.toLowerCase() === `/${routeItem.path.toLowerCase()}`,
-                    // Highlight the background of the active item
-                    "bg-blue-100": url.toLowerCase() === `/${routeItem.path.toLowerCase()}`,
+                    // Active item highlight and blue border on right
+                    "border-r-4 border-blue-500": normalizedUrl === `/${routeItem.path.toLowerCase()}`,
+                    "bg-blue-100": normalizedUrl === `/${routeItem.path.toLowerCase()}`,
                   }
                 )}
                 onClick={() => routeItem.subMenu && toggleSubMenu(routeItem.path)}
@@ -78,8 +81,8 @@ const SideBar = () => {
                     <li
                       key={subMenuItem.path}
                       className={clsx("text-gray-500 text-sm py-2 hover:bg-gray-200 w-full px-3", {
-                        // Highlight the background of active submenu item
-                        "bg-gray-200": url.toLowerCase() === `/${subMenuItem.path.toLowerCase()}`
+                        // Active background for submenu items
+                        "bg-gray-200": normalizedUrl === `/${subMenuItem.path.toLowerCase()}`
                       })}
                     >
                       <Link href={`/${subMenuItem.path.toLowerCase()}`}>

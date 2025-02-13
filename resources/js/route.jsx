@@ -1,3 +1,4 @@
+// route.js
 import Adjustments from "./Pages/adjustments/Adjustments";
 import Currencies from "./Pages/currencies/Currencies";
 import Dashboard from "./Pages/Dashboard";
