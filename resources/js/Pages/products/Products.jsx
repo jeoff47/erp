@@ -9,6 +9,7 @@ import LayOut from "@/Layouts/LayOut";
 import CreateProductModal from "@/Components/features/Products/CreateProductModal";
 import SearchBar from "@/Components/SearchBar";
 import FilterModal from "@/Components/FilterModal"; // Import FilterModal
+import CreateButton from "@/Components/CreateButton";
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -95,6 +96,7 @@ const Products = () => {
               onExport={handleExport}
             />
             <ImportCreateButtons onCreateProduct={handleCreateProduct} />
+            <CreateButton onClick={handleCreateProduct} > Create Product </CreateButton>
           </div>
         </div>
 

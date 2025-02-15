@@ -112,9 +112,6 @@ Route::get('Warehouse', function () {
 })->middleware(['auth', 'verified'])->name('Warehouse');
 ;
 
-Route::get('/CreateProductForm', function () {
-    return Inertia::render('Pages/products/CreateProductForm');
-})->middleware(['auth', 'verified'])->name('CreateProductForm');
 
 
 

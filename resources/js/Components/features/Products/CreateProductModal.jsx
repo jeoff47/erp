@@ -30,7 +30,7 @@ const CreateProductModal = ({ isOpen, closeModal }) => {
         orderTax: '',
         taxType: '',
         productQuantity: '',
-        
+        productType: '',
     });
 
     const [errors, setErrors] = useState({});

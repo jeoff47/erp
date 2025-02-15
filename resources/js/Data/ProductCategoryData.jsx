@@ -3,12 +3,17 @@ const ProductCategoryData = {
     columns: [
       { header: 'Product ID', accessor: 'id' },
       { header: 'Product Category', accessor: 'ProductCategoryName' },
-      { header: 'Product Count', accessor: 'CountNumber' },
-      { header: 'Action', accessor: 'Action' }
+      { header: 'Product Count', accessor: 'CountNumber' }
     ],
-    product: [
-      { id: 1, ProductCategoryName: 'Product 1', CountNumber: '$10', Action: 'Category 1' },
-      { id: 2, ProductCategoryName: 'Product 2', CountNumber: '$15', Action: 'Category 2' }
+    data: [
+      { id: 1, ProductCategoryName: 'Product 1', CountNumber: '$10' },
+      { id: 2, ProductCategoryName: 'Product 2', CountNumber: '$15' },
+      { id: 3, ProductCategoryName: 'Product 1', CountNumber: '$10' },
+      { id: 4, ProductCategoryName: 'Product 2', CountNumber: '$15' },
+      { id: 5, ProductCategoryName: 'Product 1', CountNumber: '$10' },
+      { id: 6, ProductCategoryName: 'Product 2', CountNumber: '$15' },
+      { id: 7, ProductCategoryName: 'Product 1', CountNumber: '$10' },
+      { id: 8, ProductCategoryName: 'Product 2', CountNumber: '$15' }
     ]
   };
   
