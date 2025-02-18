@@ -1,4 +1,3 @@
-// SideBar.js
 import { useState } from "react";
 import { Link, usePage } from "@inertiajs/react"; // For Inertia.js navigation
 import clsx from "clsx"; 
@@ -68,7 +67,7 @@ const SideBar = () => {
                   <FaAngleRight
                     className={clsx("transition-transform duration-300", {
                       "rotate-90": subMenuStates[routeItem.path],
-                      "hidden": !open
+                      "hidden": !open,
                     })}
                   />
                 )}
@@ -82,7 +81,7 @@ const SideBar = () => {
                       key={subMenuItem.path}
                       className={clsx("text-gray-500 text-sm py-2 hover:bg-gray-200 w-full px-3", {
                         // Active background for submenu items
-                        "bg-gray-200": normalizedUrl === `/${subMenuItem.path.toLowerCase()}`
+                        "bg-gray-200": normalizedUrl === `/${subMenuItem.path.toLowerCase()}`,
                       })}
                     >
                       <Link href={`/${subMenuItem.path.toLowerCase()}`}>

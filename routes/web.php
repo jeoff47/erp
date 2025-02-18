@@ -24,8 +24,8 @@ Route::get('/BaseUnit', function () {
 })->middleware(['auth', 'verified'])->name('BaseUnit');
 
 Route::get('/Brands', function () {
-    return Inertia::render('products/Adjustments'); 
-})->middleware(['auth', 'verified'])->name('Adjustments');
+    return Inertia::render('products/Brands'); 
+})->middleware(['auth', 'verified'])->name('Brands');
 
 Route::get('/Currencies', function () {
     return Inertia::render('currencies/Currencies'); 
@@ -107,9 +107,14 @@ Route::get('/Variation', function () {
     return Inertia::render('products/Variation'); 
 })->middleware(['auth', 'verified'])->name('Variation');
 
-Route::get('Warehouse', function () {
+Route::get('/Warehouse', function () {
     return Inertia::render('warehouse/Warehouse'); 
 })->middleware(['auth', 'verified'])->name('Warehouse');
+;
+
+Route::get('/Adjustments', function () {
+    return Inertia::render('adjustments/Adjustments'); 
+})->middleware(['auth', 'verified'])->name('Adjustment');
 ;
 
 

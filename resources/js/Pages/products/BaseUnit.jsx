@@ -89,7 +89,6 @@ const BaseUnit = () => {
             return [...prevFilters, { column, condition, value }];
         });
     };
-
   return (
     <LayOut>
             <div className="p-4">

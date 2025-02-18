@@ -33,7 +33,7 @@ import { TbPackages } from "react-icons/tb";
 export const route = [
   {
     path: "Dashboard",
-    element: <Dashboard />,
+    element: Dashboard ,
     permission: "",
     icon: <MdDashboard />
   },
@@ -43,19 +43,19 @@ export const route = [
     subMenu: [
       {
         path: "Products",
-        element: <Products />,
+        element: Products,
         icon: <FaBox />,
         permission: ""
       },
       {
         path: "Product Categories",
-        element: <ProductCategories />,
+        element: ProductCategories,
         icon: <GiBoxUnpacking />,
         permission: ""
       },
       {
         path: "Base Unit",
-        element: <BaseUnit />,
+        element: BaseUnit ,
         icon: <TbPackages />,
         permission: ""
       },
